@@ -1,2 +1,7 @@
 # Grupa4-Hotel
-Tema: Hotel
+Tema: Aplikacija za hotel
+
+Team members
+Velid Poško
+Smajl Omerčić
+
