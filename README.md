@@ -1,34 +1,34 @@
 # Grupa4-Hotel
-Tema: Aplikacija za hotel
+__Tema: Aplikacija za hotel__
 
-Team members
+![Image description](http://icon-library.com/icon/hotel-icon-28.html)
 
+Team members:
 Velid Poško
-
 Smajl Omerčić
 
-Prateće okolnosti pripreme projekta 
+__Prateće okolnosti pripreme projekta__ 
  
 Činjenica je da se danas hoteli i smještaji ne koriste samo u turističke svrhe, nego postoje i mnogi drugi programi i aktivnosti koje oni nude bez boravka u istima.  Otuda potreba za razvojem ili pak unapređenjem jednog sistema koji će omogućiti prije svega odličnu organizaciju svega navedenog, a pored toga i sve informacije koje su klijentu potrebne. 
  
-Opis projektnih aktivnosti  
+__Opis projektnih aktivnosti__  
  
 Projekat ima za cilj implementaciju jedne aplikacije (po mogućnosti Web) namijenjene za lanac hotela koja nudi sljedeće: 
-1. Log in – 2 načina logovanja u sistem: GOST i UPOSLENIK s različitim pravima pristupa 
+__1. Log in__ – 2 načina logovanja u sistem: GOST i UPOSLENIK s različitim pravima pristupa 
 
-2. Početna stranica – uposlenik ima mogućnost unosa detaljnih informacija o samom hotelu kao što su: lokacija, sam izgled u vidu slika i slično, dok gost može samo pristupiti istima 
+__2. Početna stranica__ – uposlenik ima mogućnost unosa detaljnih informacija o samom hotelu kao što su: lokacija, sam izgled u vidu slika i slično, dok gost može samo pristupiti istima 
 
-3. Kontakt i informacije - broj telefona, email adresa, fax, s tim da kontakti trebaju biti razvrstani po aktivnostima u samom hotelu, tj. da za različite aktivnosti koje korisnika zanimaju postoje različiti kontakti i samim time se omogućava bolja organizacija, ostaviti mogućnost dodavanja informacija o samim kreatorima aplikacije 
+__3. Kontakt i informacije__ - broj telefona, email adresa, fax, s tim da kontakti trebaju biti razvrstani po aktivnostima u samom hotelu, tj. da za različite aktivnosti koje korisnika zanimaju postoje različiti kontakti i samim time se omogućava bolja organizacija, ostaviti mogućnost dodavanja informacija o samim kreatorima aplikacije 
 
-4. Booking - brz sistem za provjeru raspoloživih kapaciteta hotela, odabir vrste soba, naznaku datuma prijave i odjave, broj gostiju, sortiranje gostiju po željenim sadržajima, obračun cijena usluga, mogućnost elektronskog plaćanja i slično. 
+__4. Booking__ - brz sistem za provjeru raspoloživih kapaciteta hotela, odabir vrste soba, naznaku datuma prijave i odjave, broj gostiju, sortiranje gostiju po željenim sadržajima, obračun cijena usluga, mogućnost elektronskog plaćanja i slično. 
 
-5. Aktivnosti - razni programi koje hotel nudi (u vidu paketa ili odvojeno), kao što su posjete turističkim atrakcijama, Wellnes & spa centri, mogućnost dodavanja novih stavki, programa...
+__5. Aktivnosti__ - razni programi koje hotel nudi (u vidu paketa ili odvojeno), kao što su posjete turističkim atrakcijama, Wellnes & spa centri, mogućnost dodavanja novih stavki, programa...
 
-6. Lokacija – budući da je aplikacija namjenjena lancu hotela, postoji opcija za odabir lokacije, bilo da se radi o dodavanju novog hotela u sistem (za uposlenika) ili izboru lokacije za booking. 
+__6. Lokacija__ – budući da je aplikacija namjenjena lancu hotela, postoji opcija za odabir lokacije, bilo da se radi o dodavanju novog hotela u sistem (za uposlenika) ili izboru lokacije za booking. 
 
-7. Izvještaj - Aplikacija će omogućiti generisanje izvještaja o finansijskim i statistikama vezanim za posjećenost. 
+__7. Izvještaj__ - Aplikacija će omogućiti generisanje izvještaja o finansijskim i statistikama vezanim za posjećenost. 
 
-Cilj projekta 
+__Cilj projekta__ 
 
 Bez obzira što već postoje mnoge aplikacije ovog tipa, cilj je ponuditi vlasnicima hotela nova rješenja za probleme koji se javljaju s razvojem ove branše. Brzina i efikasnost su ono čemu težimo pri razvoju, jer je ušteda vremena razlog zbog čega ovakvi sistemi i postoje. 
 
