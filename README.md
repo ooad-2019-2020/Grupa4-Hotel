@@ -1,7 +1,10 @@
 # Grupa4-Hotel
 __Tema: Aplikacija za hotel__
 
-![Image description](http://icon-library.com/icon/hotel-icon-28.html)
+![](https://github.com/ooad-2019-2020/Grupa4-Hotel/blob/master/Slike/pngfuel.com.png){
+   width:30px;
+   height:30px;
+}
 
 Team members:
 Velid Poško
