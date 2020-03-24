@@ -5,7 +5,7 @@ __Team members:__
 Velid Poško i Smajl Omerčić
 
 
-<img src="https://github.com/ooad-2019-2020/Grupa4-Hotel/blob/master/Slike/illust58-6419-01.jpg" alt="slika" width="200"/>
+<img src="https://github.com/ooad-2019-2020/Grupa4-Hotel/blob/master/Dokumentacija/Slike/illust58-6419-01.jpg" alt="slika" width="200"/>
 
 
 ## Prateće okolnosti pripreme projekta
