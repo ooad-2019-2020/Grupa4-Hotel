@@ -2,8 +2,11 @@
 __Tema: Aplikacija za hotel__
 
 Team members:
-Velid Poško
-Smajl Omerčić
+Velid Poško i Smajl Omerčić
+
+
+<img src="https://github.com/ooad-2019-2020/Grupa4-Hotel/blob/master/Slike/pngfuel.com.png" alt="slika" width="200"/>
+
 
 __Prateće okolnosti pripreme projekta__ 
  
