@@ -2,6 +2,8 @@
 Tema: Aplikacija za hotel
 
 Team members
+
 Velid Poško
+
 Smajl Omerčić
 
