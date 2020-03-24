@@ -1,18 +1,18 @@
 # Grupa4-Hotel
-##Tema: Aplikacija za hotel
+__Tema: Aplikacija za hotel__
 
-Team members:
+__Team members:__
 Velid Poško i Smajl Omerčić
 
 
 <img src="https://github.com/ooad-2019-2020/Grupa4-Hotel/blob/master/Slike/illust58-6419-01.jpg" alt="slika" width="200"/>
 
 
-##Prateće okolnosti pripreme projekta
+## Prateće okolnosti pripreme projekta
  
 Činjenica je da se danas hoteli i smještaji ne koriste samo u turističke svrhe, nego postoje i mnogi drugi programi i aktivnosti koje oni nude bez boravka u istima.  Otuda potreba za razvojem ili pak unapređenjem jednog sistema koji će omogućiti prije svega odličnu organizaciju svega navedenog, a pored toga i sve informacije koje su klijentu potrebne. 
  
-##Opis projektnih aktivnosti  
+## Opis projektnih aktivnosti  
  
 Projekat ima za cilj implementaciju jedne aplikacije (po mogućnosti Web) namijenjene za lanac hotela koja nudi sljedeće: 
 __1. Log in__ – 2 načina logovanja u sistem: GOST i UPOSLENIK s različitim pravima pristupa 
@@ -29,7 +29,7 @@ __6. Lokacija__ – budući da je aplikacija namjenjena lancu hotela, postoji op
 
 __7. Izvještaj__ - Aplikacija će omogućiti generisanje izvještaja o finansijskim i statistikama vezanim za posjećenost. 
 
-##Cilj projekta
+## Cilj projekta
 
 Bez obzira što već postoje mnoge aplikacije ovog tipa, cilj je ponuditi vlasnicima hotela nova rješenja za probleme koji se javljaju s razvojem ove branše. Brzina i efikasnost su ono čemu težimo pri razvoju, jer je ušteda vremena razlog zbog čega ovakvi sistemi i postoje. 
 
