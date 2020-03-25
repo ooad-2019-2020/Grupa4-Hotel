@@ -14,7 +14,8 @@ Velid Poško i Smajl Omerčić
  
 ## Opis projektnih aktivnosti  
  
-Projekat ima za cilj implementaciju jedne aplikacije (po mogućnosti Web) namijenjene za lanac hotela koja nudi sljedeće: 
+Projekat ima za cilj implementaciju jedne aplikacije (po mogućnosti Web) namijenjene za lanac hotela koja nudi sljedeće:
+
 __1. Log in__ – 2 načina logovanja u sistem: GOST i UPOSLENIK s različitim pravima pristupa 
 
 __2. Početna stranica__ – uposlenik ima mogućnost unosa detaljnih informacija o samom hotelu kao što su: lokacija, sam izgled u vidu slika i slično, dok gost može samo pristupiti istima 
