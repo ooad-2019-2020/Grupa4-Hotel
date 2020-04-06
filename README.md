@@ -2,8 +2,8 @@
 __Tema: Aplikacija za hotel__
 
 __Team members:__
-Velid Poško i Smajl Omerčić
-
+[Smajl Omerčić](https://github.com/somercic1)
+[Velid Poško](https://github.com/velidp)
 
 <img src="https://github.com/ooad-2019-2020/Grupa4-Hotel/blob/master/Dokumentacija/Slike/illust58-6419-01.jpg" alt="slika" width="200"/>
 
