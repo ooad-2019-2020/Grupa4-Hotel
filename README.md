@@ -3,7 +3,6 @@ __Tema: Aplikacija za hotel__
 
 __Team members:__
 
-
 [Smajl Omerčić](https://github.com/somercic1)
 
 [Velid Poško](https://github.com/velidp)
