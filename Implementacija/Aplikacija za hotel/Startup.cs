@@ -70,4 +70,4 @@ namespace Aplikacija_za_hotel
 }
 
 
-//nebitno 1
+//nebitno 2
