@@ -8,8 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AplikacijaZaHotel.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace Aplikacija_za_hotel
+namespace AplikacijaZaHotel
 {
     public class Startup
     {
@@ -24,6 +26,10 @@ namespace Aplikacija_za_hotel
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<AplikacijaZaHotelContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("AplikacijaZaHotelContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

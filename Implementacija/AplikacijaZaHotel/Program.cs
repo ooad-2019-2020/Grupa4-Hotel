@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Aplikacija_za_hotel
+namespace AplikacijaZaHotel
 {
     public class Program
     {
@@ -24,4 +24,3 @@ namespace Aplikacija_za_hotel
                 });
     }
 }
-//test test

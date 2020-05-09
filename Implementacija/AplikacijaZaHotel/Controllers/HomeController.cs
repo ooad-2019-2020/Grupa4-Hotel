@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Aplikacija_za_hotel.Models;
+using AplikacijaZaHotel.Models;
 
-namespace Aplikacija_za_hotel.Controllers
+namespace AplikacijaZaHotel.Controllers
 {
     public class HomeController : Controller
     {
