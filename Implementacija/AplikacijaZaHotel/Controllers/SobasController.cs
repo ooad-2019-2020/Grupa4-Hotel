@@ -46,6 +46,14 @@ namespace AplikacijaZaHotel.Controllers
         // GET: Sobas/Create
         public IActionResult Create()
         {
+            List<Vrsta> listaVrsat = new List<Vrsta>();
+
+            //ovo je sporno: ???
+            listaVrsat = (from c in _context.Vrsta select c).ToList();
+            listaVrsat.Insert(0, new Vrsta { Id = 0, Naziv = "--Odaberite vrstu sobe--" });
+            ViewBag.message = listaVrsat;
+            
+
             return View();
         }
 

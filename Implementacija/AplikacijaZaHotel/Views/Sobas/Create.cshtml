@@ -10,11 +10,8 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <select id="vrsta">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+        <select asp-for = "Id" asp-items="@(new SelectList(ViewBag.message,"Id","Naziv"))">
+            
         </select>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
