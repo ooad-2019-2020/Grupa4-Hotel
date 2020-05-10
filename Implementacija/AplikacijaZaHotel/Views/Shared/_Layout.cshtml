@@ -25,6 +25,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Sadrzajs" asp-action="Index">Sadržaji</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Vrstas" asp-action="Index">Vrste soba</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Sobas" asp-action="Index">Sobe</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
@@ -32,10 +38,11 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
-        </main>
+</main>
     </div>
 
     <footer class="border-top footer text-muted">

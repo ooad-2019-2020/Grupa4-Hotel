@@ -15,5 +15,7 @@ namespace AplikacijaZaHotel.Data
         }
 
         public DbSet<Sadrzaj> Sadrzaj { get; set; }
+        public DbSet<Vrsta> Vrsta { get; set; }
+        public DbSet<Soba> Soba { get; set; }
     }
 }
