@@ -7,11 +7,27 @@
 <h1>Create</h1>
 
 <h4>Soba</h4>
+
+
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <select asp-for = "Id" asp-items="@(new SelectList(ViewBag.message,"Id","Naziv"))">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function ()
+            { 
+                $("#SelectItems").change(function () 
+                {
+                    var dcn = document.getElementById("SelectItems");
+                    alert("Id: " + dcn.options[dcn.selectedIndex].value + " Naziv: " + dcn.options[dcn.selectedIndex].text)
+                });
+            });
             
+        </script>
+
+
+        <select id="SelectItems" asp-for="Id" asp-items="@(new SelectList(ViewBag.message,"Id","Naziv"))">
         </select>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
