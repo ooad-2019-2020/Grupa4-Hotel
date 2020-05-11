@@ -15,15 +15,13 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
-            $(document).ready(function ()
-            { 
-                $("#SelectItems").change(function () 
-                {
+            $(document).ready(function () {
+                $("#SelectItems").change(function () {
                     var dcn = document.getElementById("SelectItems");
                     alert("Id: " + dcn.options[dcn.selectedIndex].value + " Naziv: " + dcn.options[dcn.selectedIndex].text)
                 });
             });
-            
+
         </script>
 
 
