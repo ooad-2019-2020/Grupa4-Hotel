@@ -9,44 +9,42 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AplikacijaZaHotel.Migrations
 {
     [DbContext(typeof(AplikacijaZaHotelContext))]
-    [Migration("20200510210452_MigracijaVrste")]
-    partial class MigracijaVrste
+    [Migration("20200528181702_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.3")
+                .HasAnnotation("ProductVersion", "3.1.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AplikacijaZaHotel.Models.Sadrzaj", b =>
+            modelBuilder.Entity("AplikacijaZaHotel.Models.Soba", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<float>("Cijena")
-                        .HasColumnType("real");
+                    b.Property<int>("BrojSobe")
+                        .HasColumnType("int");
 
-                    b.Property<bool>("Dostupnost")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Naziv")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Opis")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("VrstaID")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sadrzaj");
+                    b.HasAlternateKey("BrojSobe");
+
+                    b.HasIndex("VrstaID");
+
+                    b.ToTable("Soba");
                 });
 
             modelBuilder.Entity("AplikacijaZaHotel.Models.Vrsta", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("VrstaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -54,11 +52,8 @@ namespace AplikacijaZaHotel.Migrations
                     b.Property<bool>("Balkon")
                         .HasColumnType("bit");
 
-                    b.Property<float>("Cijena")
-                        .HasColumnType("real");
-
-                    b.Property<bool>("Dostupnost")
-                        .HasColumnType("bit");
+                    b.Property<double>("Cijena")
+                        .HasColumnType("float");
 
                     b.Property<int>("Kapacitet")
                         .HasColumnType("int");
@@ -66,9 +61,18 @@ namespace AplikacijaZaHotel.Migrations
                     b.Property<string>("Naziv")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("VrstaId");
 
                     b.ToTable("Vrsta");
+                });
+
+            modelBuilder.Entity("AplikacijaZaHotel.Models.Soba", b =>
+                {
+                    b.HasOne("AplikacijaZaHotel.Models.Vrsta", "Vrsta")
+                        .WithMany("Sobas")
+                        .HasForeignKey("VrstaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

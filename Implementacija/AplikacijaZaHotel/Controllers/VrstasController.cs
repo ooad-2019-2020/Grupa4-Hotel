@@ -34,7 +34,7 @@ namespace AplikacijaZaHotel.Controllers
             }
 
             var vrsta = await _context.Vrsta
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.VrstaId == id);
             if (vrsta == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace AplikacijaZaHotel.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Naziv,Cijena,Balkon,Dostupnost,Kapacitet")] Vrsta vrsta)
+        public async Task<IActionResult> Create([Bind("VrstaId,Naziv,Balkon,Kapacitet,Cijena")] Vrsta vrsta)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace AplikacijaZaHotel.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Naziv,Cijena,Balkon,Dostupnost,Kapacitet")] Vrsta vrsta)
+        public async Task<IActionResult> Edit(int id, [Bind("VrstaId,Naziv,Balkon,Kapacitet,Cijena")] Vrsta vrsta)
         {
-            if (id != vrsta.Id)
+            if (id != vrsta.VrstaId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace AplikacijaZaHotel.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!VrstaExists(vrsta.Id))
+                    if (!VrstaExists(vrsta.VrstaId))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace AplikacijaZaHotel.Controllers
             }
 
             var vrsta = await _context.Vrsta
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.VrstaId == id);
             if (vrsta == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace AplikacijaZaHotel.Controllers
 
         private bool VrstaExists(int id)
         {
-            return _context.Vrsta.Any(e => e.Id == id);
+            return _context.Vrsta.Any(e => e.VrstaId == id);
         }
     }
 }

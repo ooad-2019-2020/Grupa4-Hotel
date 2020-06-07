@@ -9,13 +9,28 @@ namespace AplikacijaZaHotel.Data
 {
     public class AplikacijaZaHotelContext : DbContext
     {
-        public AplikacijaZaHotelContext(DbContextOptions<AplikacijaZaHotelContext> options)
+        public AplikacijaZaHotelContext (DbContextOptions<AplikacijaZaHotelContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Sadrzaj> Sadrzaj { get; set; }
-        public DbSet<Vrsta> Vrsta { get; set; }
-        public DbSet<Soba> Soba { get; set; }
+        
+
+        public DbSet<AplikacijaZaHotel.Models.Vrsta> Vrsta { get; set; }
+
+        public DbSet<AplikacijaZaHotel.Models.Soba> Soba { get; set; }
+
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=AplikacijaZaHotelContext-51a2a9bc-fbba-4ffd-a91d-52eba6496dfd;Trusted_Connection=True;");
+        }
+        /*
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //modelBuilder.Entity<Soba>().HasAlternateKey(u => u.BrojSobe);
+            modelBuilder.Entity<Soba>().HasAlternateKey(u => new { u.BrojSobe });
+        }*/
+
     }
 }

@@ -4,6 +4,15 @@
     ViewData["Title"] = "Edit";
 }
 
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"].Errors.Count > 0)
+{
+    <div class="alert alert-
+       <strong>Error!</strong> danger">@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+    </div>
+}
+
+
 <h1>Edit</h1>
 
 <h4>Soba</h4>
@@ -13,6 +22,16 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="BrojSobe" class="control-label"></label>
+                <input asp-for="BrojSobe" class="form-control" />
+                <span asp-validation-for="BrojSobe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VrstaID" class="control-label"></label>
+                <select asp-for="VrstaID" class="form-control" asp-items="ViewBag.VrstaID"></select>
+                <span asp-validation-for="VrstaID" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

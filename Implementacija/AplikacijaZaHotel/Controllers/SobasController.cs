@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AplikacijaZaHotel.Data;
 using AplikacijaZaHotel.Models;
+using System.Data.SqlClient;
+using Xceed.Wpf.Toolkit;
 
 namespace AplikacijaZaHotel.Controllers
 {
@@ -22,7 +24,8 @@ namespace AplikacijaZaHotel.Controllers
         // GET: Sobas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Soba.ToListAsync());
+            var aplikacijaZaHotelContext = _context.Soba.Include(s => s.Vrsta);
+            return View(await aplikacijaZaHotelContext.ToListAsync());
         }
 
         // GET: Sobas/Details/5
@@ -34,6 +37,7 @@ namespace AplikacijaZaHotel.Controllers
             }
 
             var soba = await _context.Soba
+                .Include(s => s.Vrsta)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (soba == null)
             {
@@ -46,14 +50,7 @@ namespace AplikacijaZaHotel.Controllers
         // GET: Sobas/Create
         public IActionResult Create()
         {
-            List<Vrsta> listaVrsat = new List<Vrsta>();
-
-            //ovo je sporno: ???
-            listaVrsat = (from c in _context.Vrsta select c).ToList();
-            listaVrsat.Insert(0, new Vrsta { Id = 0, Naziv = "--Odaberite vrstu sobe--" });
-            ViewBag.message = listaVrsat;
-            
-
+            ViewData["VrstaID"] = new SelectList(_context.Vrsta, "VrstaId", "Naziv");
             return View();
         }
 
@@ -62,14 +59,24 @@ namespace AplikacijaZaHotel.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id")] Soba soba)
+        public async Task<IActionResult> Create([Bind("Id,BrojSobe,VrstaID")] Soba soba)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(soba);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _context.Add(soba);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Create));
+                }
             }
+            catch(Exception ex)
+            {
+                //Console.WriteLine("sta ima");
+                ModelState.AddModelError("Error", "Uneseni broj sobe je zazet!");
+            }
+
+            ViewData["VrstaID"] = new SelectList(_context.Vrsta, "VrstaId", "Naziv", soba.VrstaID);
             return View(soba);
         }
 
@@ -86,6 +93,7 @@ namespace AplikacijaZaHotel.Controllers
             {
                 return NotFound();
             }
+            ViewData["VrstaID"] = new SelectList(_context.Vrsta, "VrstaId", "Naziv", soba.VrstaID);
             return View(soba);
         }
 
@@ -94,7 +102,7 @@ namespace AplikacijaZaHotel.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id")] Soba soba)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,BrojSobe,VrstaID")] Soba soba)
         {
             if (id != soba.Id)
             {
@@ -107,6 +115,7 @@ namespace AplikacijaZaHotel.Controllers
                 {
                     _context.Update(soba);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -117,10 +126,20 @@ namespace AplikacijaZaHotel.Controllers
                     else
                     {
                         throw;
+              
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                catch (Exception ex)
+                {
+                    //Console.WriteLine("sta ima");
+                    ModelState.AddModelError("Error", "Uneseni broj sobe je zazet!");
+                    //return RedirectToAction(nameof(Edit));
+                }
+                //return RedirectToAction(nameof(Index));
             }
+
+
+            ViewData["VrstaID"] = new SelectList(_context.Vrsta, "VrstaId", "Naziv", soba.VrstaID);
             return View(soba);
         }
 
@@ -133,6 +152,7 @@ namespace AplikacijaZaHotel.Controllers
             }
 
             var soba = await _context.Soba
+                .Include(s => s.Vrsta)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (soba == null)
             {

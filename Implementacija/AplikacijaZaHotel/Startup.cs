@@ -28,8 +28,7 @@ namespace AplikacijaZaHotel
             services.AddControllersWithViews();
 
             services.AddDbContext<AplikacijaZaHotelContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("AplikacijaZaHotelContext")));
-
+                    options.UseSqlServer(Configuration.GetConnectionString("AplikacijaZaHotelContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
